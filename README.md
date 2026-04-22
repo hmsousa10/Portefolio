@@ -12,7 +12,7 @@
 Bem-vindo ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para mostrar a minha experiência, projetos e as tecnologias com as quais trabalho como **Full-Stack Web Developer**.
 
 ### 🔗 Live Demo
-O site está hospedado e a correr no GitHub Pages: **[Acessar Portfólio](https://hmsousa10.github.io/Portefolio)**
+O site está hospedado e a correr no Netlify: **[Acessar Portfólio](https://hugo-daira-sousa-portefolio.netlify.app/)**
 
 ### ✨ Principais Funcionalidades
 * **Bilingue (PT/EN):** Sistema de tradução instantânea em JavaScript puro (sem loadings).
@@ -37,7 +37,7 @@ O site está hospedado e a correr no GitHub Pages: **[Acessar Portfólio](https:
 Welcome to my personal portfolio repository! This project was developed to showcase my experience, projects, and the technologies I work with as a **Full-Stack Web Developer**.
 
 ### 🔗 Live Demo
-The site is hosted and live on GitHub Pages: **[Visit Portfolio](https://hmsousa10.github.io/Portefolio)**
+The site is hosted and live on Netlify: **[Visit Portfolio](https://hugo-daira-sousa-portefolio.netlify.app/)**
 
 ### ✨ Key Features
 * **Bilingual (PT/EN):** Instant translation system using vanilla JavaScript (no reloads).
