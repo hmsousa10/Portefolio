@@ -27,7 +27,7 @@ O site está hospedado e a correr no Netlify: **[Acessar Portfólio](https://hug
 * **Tipografia:** Google Fonts (Playfair Display, Inter, Fira Code).
 
 ### 📬 Contacto
-* **LinkedIn:** [hugo-daira-sousa](https://www.linkedin.com/) *(adiciona o teu link real no repositório depois)*
+* **LinkedIn:** [Hugo Miguel Daira Sousa](https://www.linkedin.com/in/hugo-miguel-daira-sousa-99815a266/)
 * **Email:** hugomigueldaira.sousa@gmail.com
 
 ---
@@ -52,5 +52,5 @@ The site is hosted and live on Netlify: **[Visit Portfolio](https://hugo-daira-s
 * **Typography:** Google Fonts (Playfair Display, Inter, Fira Code).
 
 ### 📬 Contact
-* **LinkedIn:** [hugo-daira-sousa](https://www.linkedin.com/) *(add your real link here later)*
+* **LinkedIn:** [Hugo Miguel Daira Sousa](https://www.linkedin.com/in/hugo-miguel-daira-sousa-99815a266/)
 * **Email:** hugomigueldaira.sousa@gmail.com
