@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hugo Daira Sousa — Full-Stack Developer</title>
+  <meta name="description" content="Portfólio de Hugo Miguel Daira Dias Guedes Sousa (Hugo Daira Sousa), estudante de Engenharia Informática e Full-Stack Web Developer. Projetos em PHP, JavaScript, HTML5 e CSS3.">
+  <meta name="author" content="Hugo Miguel Daira Dias Guedes Sousa">
+  <meta name="keywords" content="Hugo Sousa, Hugo Daira Sousa, Hugo Miguel Daira Dias Guedes Sousa, Full-Stack Developer, PHP, JavaScript, Portfólio, Web Developer Portugal">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hugo Daira Sousa — Full-Stack Developer">
+  <meta property="og:description" content="Portfólio profissional de Hugo Miguel Daira Dias Guedes Sousa. Developer empenhado com paixão por tecnologia e trabalho em equipa.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (emoji-based inline) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+</head>
+
+<body>
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">hugo<span>.</span>dev</a>
+
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav-about">Sobre</a></li>
+        <li><a href="#skills" data-i18n="nav-skills">Competências</a></li>
+        <li><a href="#projects" data-i18n="nav-projects">Projetos</a></li>
+        <li><a href="#experience" data-i18n="nav-experience">Experiência</a></li>
+        <li><a href="#education" data-i18n="nav-education">Formação</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">Contacto</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="theme-toggle" class="control-btn" aria-label="Alternar Tema">
+          <i class="ph ph-sun"></i>
+        </button>
+        <button id="lang-toggle" class="control-btn lang-toggle" aria-label="Alternar Idioma">
+          PT
+        </button>
+      </div>
+
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="#about" data-i18n="nav-about">Sobre</a></li>
+      <li><a href="#skills" data-i18n="nav-skills">Competências</a></li>
+      <li><a href="#projects" data-i18n="nav-projects">Projetos</a></li>
+      <li><a href="#experience" data-i18n="nav-experience">Experiência</a></li>
+      <li><a href="#education" data-i18n="nav-education">Formação</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting" data-i18n="hero-greeting">// Olá, bem-vindo ao meu portfólio</p>
+
+        <h1 class="hero-name">
+          Hugo Daira<br><span class="accent">Sousa</span>
+        </h1>
+
+        <p class="hero-role" data-i18n="hero-role">Full-Stack Web Developer</p>
+
+        <!-- Imagem no Mobile (entre Título e Descrição) -->
+        <div class="hero-visual mobile-visual">
+          <div class="hero-img-wrapper">
+            <img src="assets/hugo-profile.jpg" alt="Hugo Daira Sousa - Full-Stack Developer"
+                 onerror="this.style.background='linear-gradient(135deg, var(--bg-tertiary), var(--bg-card))'; this.style.display='flex'; this.alt='HS';">
+          </div>
+        </div>
+
+        <p class="hero-desc" data-i18n="hero-desc">
+          Estudante de Engenharia Informática na Universidade Lusófona do Porto.
+          Apaixonado por criar soluções web completas, com dedicação ao detalhe
+          e espírito de equipa. Do conceito ao deploy — construo experiências digitais que fazem a diferença.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <i class="ph ph-code"></i> <span data-i18n="btn-projects">Ver Projetos</span>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="ph ph-envelope-simple"></i> <span data-i18n="btn-contact">Contactar</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual desktop-visual">
+        <div class="hero-img-wrapper">
+          <img src="assets/hugo-profile.jpg" alt="Hugo Daira Sousa - Full-Stack Developer"
+               onerror="this.style.background='linear-gradient(135deg, var(--bg-tertiary), var(--bg-card))'; this.style.display='flex'; this.alt='HS';">
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span data-i18n="scroll-text">scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT ======================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Left: Text + Stats -->
+        <div class="about-text reveal">
+          <span class="section-label" data-i18n="about-label">Sobre Mim</span>
+          <h2 class="section-title" data-i18n="about-title">Developer com paixão<br>por resolver problemas</h2>
+
+          <p data-i18n="about-p1">
+            Olá! Sou o Hugo Sousa, natural de Vila Nova de Gaia, e atualmente estudo Engenharia Informática
+            na Universidade Lusófona do Porto. A minha jornada no mundo da tecnologia começou cedo — desde
+            o ensino secundário no Colégio de Gaia, no curso de Informática, Tecnologia e Multimédia (ITM),
+            onde descobri a minha paixão pela programação.
+          </p>
+          <p data-i18n="about-p2">
+            Sou um developer empenhado que valoriza o trabalho em equipa e gosta genuinamente de ajudar os outros.
+            Acredito que as melhores soluções nascem da colaboração e da atenção ao detalhe.
+            Especializo-me em desenvolvimento web Full-Stack, com foco em PHP, JavaScript, HTML5 e CSS3.
+          </p>
+          <p data-i18n="about-p3">
+            Quando não estou a programar, estou provavelmente a jogar futebol ou a passar tempo com os meus animais.
+            Também tenho formação musical — toco violino e guitarra, algo que me ensinou disciplina e perseverança.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">5+</div>
+              <div class="stat-label" data-i18n="stat-projects">Projetos</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3+</div>
+              <div class="stat-label" data-i18n="stat-years">Anos de Código</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">4</div>
+              <div class="stat-label" data-i18n="stat-tech">Tecnologias Core</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Details cards -->
+        <div class="about-details reveal">
+          <div class="detail-item">
+            <div class="detail-icon"><i class="ph ph-map-pin"></i></div>
+            <div>
+              <div class="detail-label" data-i18n="detail-location-label">Localização</div>
+              <div class="detail-value" data-i18n="detail-location-val">Canidelo, Vila Nova de Gaia</div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="ph ph-graduation-cap"></i></div>
+            <div>
+              <div class="detail-label" data-i18n="detail-edu-label">Formação Atual</div>
+              <div class="detail-value" data-i18n="detail-edu-val">Engenharia Informática — Univ. Lusófona do Porto</div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="ph ph-laptop"></i></div>
+            <div>
+              <div class="detail-label" data-i18n="detail-focus-label">Foco</div>
+              <div class="detail-value" data-i18n="detail-focus-val">Full-Stack Web Development</div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="ph ph-globe"></i></div>
+            <div>
+              <div class="detail-label" data-i18n="detail-stack-label">Stack Principal</div>
+              <div class="detail-value">PHP · JavaScript · HTML5 · CSS3</div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="ph ph-envelope"></i></div>
+            <div>
+              <div class="detail-label" data-i18n="detail-email-label">Email</div>
+              <div class="detail-value">hugomigueldaira.sousa@gmail.com</div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="ph ph-music-notes"></i></div>
+            <div>
+              <div class="detail-label" data-i18n="detail-hobbies-label">Hobbies</div>
+              <div class="detail-value" data-i18n="detail-hobbies-val">Futebol · Animais · Violino · Guitarra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SKILLS ======================== -->
+  <section class="section" id="skills" style="background: var(--bg-secondary);">
+    <div class="container">
+      <span class="section-label reveal" data-i18n="skills-label">Competências</span>
+      <h2 class="section-title reveal" data-i18n="skills-title">Stack Tecnológico</h2>
+
+      <div class="skills-grid">
+        <!-- PHP -->
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="ph ph-code"></i></div>
+          <h3 class="skill-name">PHP</h3>
+          <p class="skill-desc" data-i18n="skill-php-desc">
+            Desenvolvimento backend robusto. Criação de sistemas de gestão,
+            APIs, autenticação e integração com bases de dados MySQL.
+          </p>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="85"></div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="ph ph-lightning"></i></div>
+          <h3 class="skill-name">JavaScript</h3>
+          <p class="skill-desc" data-i18n="skill-js-desc">
+            Interatividade frontend e lógica do lado do cliente.
+            Manipulação do DOM, AJAX, validação de formulários e animações dinâmicas.
+          </p>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="80"></div>
+          </div>
+        </div>
+
+        <!-- HTML5 -->
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="ph ph-browser"></i></div>
+          <h3 class="skill-name">HTML5</h3>
+          <p class="skill-desc" data-i18n="skill-html-desc">
+            Estruturação semântica de páginas web. SEO, acessibilidade,
+            formulários avançados e integração multimédia.
+          </p>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="90"></div>
+          </div>
+        </div>
+
+        <!-- CSS3 -->
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="ph ph-palette"></i></div>
+          <h3 class="skill-name">CSS3</h3>
+          <p class="skill-desc" data-i18n="skill-css-desc">
+            Design responsivo e moderno. Flexbox, Grid, animações CSS,
+            variáveis customizadas e media queries.
+          </p>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="88"></div>
+          </div>
+        </div>
+
+        <!-- SQL -->
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="ph ph-database"></i></div>
+          <h3 class="skill-name">SQL / MySQL</h3>
+          <p class="skill-desc" data-i18n="skill-sql-desc">
+            Modelação e gestão de bases de dados relacionais.
+            Queries complexas, normalização e otimização.
+          </p>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="75"></div>
+          </div>
+        </div>
+
+        <!-- Git -->
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="ph ph-git-branch"></i></div>
+          <h3 class="skill-name">Git & GitHub</h3>
+          <p class="skill-desc" data-i18n="skill-git-desc">
+            Controlo de versões, branching, colaboração em equipa
+            e gestão de repositórios com boas práticas.
+          </p>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="78"></div>
+          </div>
+        </div>
+
+        <!-- Java -->
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="ph ph-coffee"></i></div>
+          <h3 class="skill-name">Java</h3>
+          <p class="skill-desc" data-i18n="skill-java-desc">
+            Programação orientada a objetos. Desenvolvimento de aplicações robustas, integração de sistemas e algoritmos complexos.
+          </p>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="85"></div>
+          </div>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="ph ph-file-code"></i></div>
+          <h3 class="skill-name">Python</h3>
+          <p class="skill-desc" data-i18n="skill-python-desc">
+            Automação de tarefas, processamento de dados e scripting. Foco em eficiência, código limpo e arquitetura modular.
+          </p>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="80"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROJECTS ======================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <span class="section-label reveal" data-i18n="projects-label">Projetos</span>
+      <h2 class="section-title reveal" data-i18n="projects-title">Trabalho em Destaque</h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: SGO -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/project-sgo.jpg" alt="SGO - Sistema de Gestão de Oficina" class="project-img"
+                 onerror="this.style.background='linear-gradient(135deg, #1a1a2e, #16213e)'; this.style.height='200px';">
+          </div>
+          <div class="project-info">
+            <span class="project-type" data-i18n="proj-sgo-type">Full-Stack · Académico</span>
+            <h3 class="project-title" data-i18n="proj-sgo-title">SGO — Sistema de Gestão de Oficina</h3>
+            <p class="project-desc" data-i18n="proj-sgo-desc">
+              Projeto académico Full-Stack para a disciplina de Programação Web.
+              Simula um ambiente real de gestão oficinal com painéis para administrador,
+              rececionista e mecânico. Inclui sistema de faturação, gestão de clientes e logs.
+            </p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Java</span>
+              <span class="tag">REST API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmsousa10/SGO-Gestao-Oficina" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Gostos da Arrábida -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/project-arrabida.jpg" alt="Gostos da Arrábida" class="project-img"
+                 onerror="this.style.background='linear-gradient(135deg, #2d1810, #1a0f0a)'; this.style.height='200px';">
+          </div>
+          <div class="project-info">
+            <span class="project-type" data-i18n="proj-arrabida-type">Full-Stack · Restauração</span>
+            <h3 class="project-title" data-i18n="proj-arrabida-title">Gostos d'Arrábida — Restaurante/Pastelaria</h3>
+            <p class="project-desc" data-i18n="proj-arrabida-desc">
+              Aplicação web Full-Stack para gestão de restaurante e pastelaria.
+              Inclui sistema de reservas, ementa digital com geração de QR Code para mesas
+              e painéis dedicados para Administrador e Staff.
+            </p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmsousa10/Gostos_da_Arrabida" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: ASYDIM -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/project-asydim.jpg" alt="ASYDIM - Consultoria Sustentável" class="project-img"
+                 onerror="this.style.background='linear-gradient(135deg, #0d2818, #1a3a2a)'; this.style.height='200px';">
+          </div>
+          <div class="project-info">
+            <span class="project-type" data-i18n="proj-asydim-type">Full-Stack · Sustentabilidade</span>
+            <h3 class="project-title" data-i18n="proj-asydim-title">ASYDIM — Consultoria Sustentável</h3>
+            <p class="project-desc" data-i18n="proj-asydim-desc">
+              Solução digital completa para consultoria e formação sustentável.
+              Conecta utilizadores a oportunidades educacionais verdes com design premium
+              e painel de controlo dedicado para administração.
+            </p>
+            <div class="project-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Tailwind</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmsousa10/ASYDIM" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Univermotion -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/project-univermotion.jpg" alt="Univermotion - Energias Renováveis" class="project-img"
+                 onerror="this.style.background='linear-gradient(135deg, #0a1628, #1a2a4a)'; this.style.height='200px';">
+          </div>
+          <div class="project-info">
+            <span class="project-type" data-i18n="proj-univermotion-type">Full-Stack · Energia</span>
+            <h3 class="project-title" data-i18n="proj-univermotion-title">Univermotion — Energias Renováveis</h3>
+            <p class="project-desc" data-i18n="proj-univermotion-desc">
+              Website premium de energias renováveis com simulador de painéis solares,
+              soluções de carregamento de veículos elétricos e sistema de email seguro via PHPMailer.
+            </p>
+            <div class="project-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmsousa10/Website-Univermotion" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+              <a href="https://univermotion.pt/" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-link"></i> Website
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Oficina Carlos Silva -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/project-oficina.jpg" alt="Oficina Carlos Silva" class="project-img"
+                 onerror="this.style.background='linear-gradient(135deg, #1a1a1a, #2a2a2a)'; this.style.height='200px';">
+          </div>
+          <div class="project-info">
+            <span class="project-type" data-i18n="proj-oficina-type">Frontend · Negócio Local</span>
+            <h3 class="project-title" data-i18n="proj-oficina-title">Oficina Carlos Silva & Alexandra Pires</h3>
+            <p class="project-desc" data-i18n="proj-oficina-desc">
+              Website moderno e profissional para oficina automóvel em Chaves, Portugal.
+              Design premium com experiência de utilizador otimizada, incluindo
+              serviços, contactos e localização.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmsousa10/Oficina-Carlos-Silva-Website" target="_blank" rel="noopener" class="project-link">
+                <i class="ph ph-github-logo"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== EXPERIENCE ======================== -->
+  <section class="section" id="experience" style="padding-top: 2rem;">
+    <div class="container">
+      <span class="section-label reveal" data-i18n="exp-label">Experiência</span>
+      <h2 class="section-title reveal" data-i18n="exp-title">Percurso Profissional</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-date">Jul 2023 — Jun 2024</span>
+          <h3 class="timeline-title" data-i18n="exp-armis-role">Desenvolvedor Web</h3>
+          <p class="timeline-place">ARMIS Group · <span data-i18n="exp-armis-type">Meio período</span></p>
+          <p class="timeline-desc" data-i18n="exp-armis-desc">
+            Desenvolvimento de uma aplicação capaz de ler documentos, utilizando aplicações de IA (Inteligência Artificial) cognitiva, definindo parâmetros de leitura, para armazenar e visualizar dados específicos.
+          </p>
+          <div class="project-tags" style="margin-top: 1rem;">
+            <span class="tag" data-i18n="exp-armis-skill1">Resolução de problemas</span>
+            <span class="tag" data-i18n="exp-armis-skill2">Desenvolvimento Web</span>
+            <span class="tag">IA Cognitiva</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== EDUCATION ======================== -->
+  <section class="section" id="education" style="background: var(--bg-secondary);">
+    <div class="container">
+      <span class="section-label reveal" data-i18n="edu-label">Formação</span>
+      <h2 class="section-title reveal" data-i18n="edu-title">Percurso Académico</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2024 — Presente</span>
+          <h3 class="timeline-title" data-i18n="edu-uni-title">Licenciatura em Engenharia Informática</h3>
+          <p class="timeline-place" data-i18n="edu-uni-place">Universidade Lusófona do Porto</p>
+          <p class="timeline-desc" data-i18n="edu-uni-desc">
+            Formação avançada em desenvolvimento de software, algoritmos, bases de dados,
+            redes e programação web. Foco em projetos práticos Full-Stack.
+          </p>
+        </div>
+
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2021 — 2024</span>
+          <h3 class="timeline-title" data-i18n="edu-sec-title">Ensino Secundário — ITM</h3>
+          <p class="timeline-place">Colégio de Gaia</p>
+          <p class="timeline-desc" data-i18n="edu-sec-desc">
+            Curso de Informática, Tecnologia e Multimédia (ITM). Primeiros passos no mundo
+            da programação com VB e C#. Desenvolvimento de competências em tecnologia e informática.
+          </p>
+        </div>
+
+        <div class="timeline-item reveal">
+          <span class="timeline-date">2016 — 2021</span>
+          <h3 class="timeline-title" data-i18n="edu-music-title">Ensino Articulado — Música</h3>
+          <p class="timeline-place" data-i18n="edu-music-place">Escola de Música de Perosinho</p>
+          <p class="timeline-desc" data-i18n="edu-music-desc">
+            5 anos de formação musical, com aprendizagem de Violino e Guitarra.
+            Desenvolvimento de disciplina, criatividade e perseverança.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT ======================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <span class="section-label reveal" data-i18n="contact-label">Contacto</span>
+      <h2 class="section-title reveal" data-i18n="contact-title">Vamos trabalhar juntos?</h2>
+
+      <div class="contact-grid">
+        <!-- Left: Info -->
+        <div class="reveal">
+          <p data-i18n="contact-text" style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">
+            Estou aberto a oportunidades de estágio, freelance ou colaborações.
+            Não hesites em entrar em contacto — respondo sempre!
+          </p>
+
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <div class="contact-icon"><i class="ph ph-envelope"></i></div>
+              <div>
+                <div class="contact-item-label" data-i18n="detail-email-label">Email</div>
+                <a href="mailto:hugomigueldaira.sousa@gmail.com" class="contact-item-value">
+                  hugomigueldaira.sousa@gmail.com
+                </a>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <div class="contact-icon"><i class="ph ph-phone"></i></div>
+              <div>
+                <div class="contact-item-label" data-i18n="contact-phone-label">Telefone</div>
+                <a href="tel:+351935593673" class="contact-item-value">+351 935 593 673</a>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <a href="https://github.com/hmsousa10" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:1rem;color:inherit;width:100%;">
+                <div class="contact-icon"><i class="ph ph-github-logo"></i></div>
+                <div>
+                  <div class="contact-item-label">GitHub</div>
+                  <div class="contact-item-value">hmsousa10</div>
+                </div>
+              </a>
+            </li>
+            <li class="contact-info-item">
+              <a href="https://www.linkedin.com/in/hugo-miguel-daira-sousa-99815a266/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:1rem;color:inherit;width:100%;">
+                <div class="contact-icon"><i class="ph ph-linkedin-logo"></i></div>
+                <div>
+                  <div class="contact-item-label">LinkedIn</div>
+                  <div class="contact-item-value">Hugo Daira Sousa</div>
+                </div>
+              </a>
+            </li>
+            <li class="contact-info-item">
+              <a href="https://www.instagram.com/10_hugo_26/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:1rem;color:inherit;width:100%;">
+                <div class="contact-icon"><i class="ph ph-instagram-logo"></i></div>
+                <div>
+                  <div class="contact-item-label">Instagram</div>
+                  <div class="contact-item-value">@10_hugo_26</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Form -->
+        <form class="contact-form reveal" id="contact-form" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name" data-i18n="form-name-label">Nome</label>
+              <input type="text" id="form-name" name="name" data-i18n="form-name-placeholder" placeholder="O teu nome" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" data-i18n="form-email-placeholder" placeholder="email@exemplo.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="form-subject" data-i18n="form-subject-label">Assunto</label>
+            <input type="text" id="form-subject" name="subject" data-i18n="form-subject-placeholder" placeholder="Proposta de projeto...">
+          </div>
+          <div class="form-group">
+            <label for="form-message" data-i18n="form-message-label">Mensagem</label>
+            <textarea id="form-message" name="message" rows="5" data-i18n="form-message-placeholder" placeholder="Escreve a tua mensagem aqui..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            <i class="ph ph-paper-plane-tilt"></i> <span data-i18n="form-submit">Enviar Mensagem</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">
+        &copy; <span id="current-year"></span> <span data-i18n="footer-copy">Hugo Daira Sousa. Feito com dedicação.</span>
+      </p>
+      <ul class="footer-socials">
+        <li>
+          <a href="https://github.com/hmsousa10" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="ph ph-github-logo"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/hugo-miguel-daira-sousa-99815a266/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/10_hugo_26/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="ph ph-instagram-logo"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:hugomigueldaira.sousa@gmail.com" aria-label="Email">
+            <i class="ph ph-envelope-simple"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
