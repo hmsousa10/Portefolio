@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hugo Daira Sousa — Curriculum Vitae</title>
+  <meta name="description" content="Curriculum Vitae de Hugo Daira Sousa — Full-Stack Developer & Estudante de Engenharia Informática." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ──────────────────────────────────────────────
+       RESET & BASE
+    ────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5pt;
+      background: #e8eaed;
+      color: #1a1a2e;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── project link ── */
+    .project-link {
+      display: inline-block;
+      font-size: 7pt;
+      color: #4a90d9;
+      text-decoration: none;
+      margin-top: 3px;
+      word-break: break-all;
+    }
+    .project-link:hover { text-decoration: underline; }
+    .project-note {
+      font-size: 7pt;
+      color: #e0896a;
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    /* ──────────────────────────────────────────────
+       PAGE WRAPPER  (A4 proportions, centred)
+    ────────────────────────────────────────────── */
+    .page {
+      display: flex;
+      width: 794px;          /* A4 @ 96dpi */
+      min-height: 1123px;
+      height: 1123px;
+      margin: 32px auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    /* ──────────────────────────────────────────────
+       LEFT SIDEBAR
+    ────────────────────────────────────────────── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      background: #1e2a3a;
+      color: #e8ecf0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px 22px 22px;
+      gap: 0;
+    }
+
+    /* ── Profile photo ── */
+    .profile-photo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    .profile-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #4a90d9;
+      box-shadow: 0 0 0 4px rgba(74,144,217,.2);
+    }
+
+    /* ── Name block (sidebar top) ── */
+    .sidebar-name {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .sidebar-name h1 {
+      font-size: 15pt;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -.3px;
+    }
+    .sidebar-name .role {
+      font-size: 7.5pt;
+      font-weight: 500;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #4a90d9;
+      margin-top: 5px;
+    }
+
+    /* ── Section heading (sidebar) ── */
+    .sb-section {
+      margin-top: 14px;
+    }
+    .sb-section:first-child { margin-top: 0; }
+
+    .sb-heading {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4a90d9;
+      border-bottom: 1px solid rgba(74,144,217,.35);
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    /* ── Contact list ── */
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 8pt;
+      line-height: 1.4;
+      color: #c8d0dc;
+    }
+    .contact-list li .icon {
+      width: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      opacity: .8;
+    }
+    .contact-list a { color: #c8d0dc; text-decoration: none; }
+    .contact-list a:hover { color: #4a90d9; }
+
+    /* ── Skill bars ── */
+    .skill-item { margin-bottom: 8px; }
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 8pt;
+      color: #c8d0dc;
+      margin-bottom: 4px;
+    }
+    .skill-bar {
+      height: 4px;
+      background: rgba(255,255,255,.1);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #4a90d9, #67b3ff);
+      border-radius: 99px;
+    }
+
+    /* ── Language dots ── */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+    }
+    .lang-name { font-size: 8pt; color: #c8d0dc; }
+    .lang-level { font-size: 7pt; color: #8a99ab; }
+    .lang-dots { display: flex; gap: 3px; margin-top: 2px; }
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.15);
+    }
+    .dot.filled { background: #4a90d9; }
+
+    /* ── Edu sidebar entry ── */
+    .edu-item { margin-bottom: 10px; }
+    .edu-degree {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #e0e6ef;
+      line-height: 1.3;
+    }
+    .edu-school {
+      font-size: 7.5pt;
+      color: #8a99ab;
+      margin-top: 2px;
+    }
+    .edu-year {
+      font-size: 7pt;
+      color: #4a90d9;
+      margin-top: 2px;
+    }
+
+    /* ── Interests ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
+    .tag {
+      font-size: 7pt;
+      background: rgba(74,144,217,.15);
+      color: #7bb8f0;
+      border: 1px solid rgba(74,144,217,.3);
+      border-radius: 3px;
+      padding: 2px 6px;
+    }
+
+    /* ──────────────────────────────────────────────
+       MAIN CONTENT
+    ────────────────────────────────────────────── */
+    .main {
+      flex: 1;
+      padding: 26px 28px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* ── Main section wrapper ── */
+    .section { margin-bottom: 16px; }
+
+    /* ── Tools grid ── */
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .tool-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 8pt;
+      font-weight: 500;
+      color: #2c3e55;
+      background: #f0f5fb;
+      border: 1px solid #ccdaeb;
+      border-radius: 4px;
+      padding: 4px 9px;
+    }
+    .tool-badge .dot-c {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Main section heading ── */
+    .section-heading {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #1e2a3a;
+      border-bottom: 2px solid #1e2a3a;
+      padding-bottom: 4px;
+      margin-bottom: 14px;
+    }
+
+    /* ── Summary paragraph ── */
+    .summary-text {
+      font-size: 9pt;
+      line-height: 1.65;
+      color: #3a4a5c;
+    }
+
+    /* ── Experience entry ── */
+    .entry { margin-bottom: 14px; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .entry-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .entry-period {
+      font-size: 7.5pt;
+      font-weight: 500;
+      color: #4a90d9;
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+    .entry-company {
+      font-size: 8.5pt;
+      font-weight: 500;
+      color: #4a90d9;
+      margin-top: 1px;
+    }
+    .entry-desc {
+      font-size: 8.5pt;
+      color: #4a4f5c;
+      line-height: 1.55;
+      margin-top: 4px;
+    }
+    .entry-tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+    .entry-tag {
+      font-size: 7pt;
+      background: #f0f4f9;
+      border: 1px solid #d0d9e4;
+      color: #3a5070;
+      border-radius: 3px;
+      padding: 2px 6px;
+    }
+
+    /* ── Project entry ── */
+    .project-entry { margin-bottom: 12px; padding-left: 12px; border-left: 2px solid #4a90d9; }
+    .project-name {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .project-tech {
+      font-size: 7.5pt;
+      color: #4a90d9;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .project-desc {
+      font-size: 8.5pt;
+      color: #4a4f5c;
+      line-height: 1.5;
+      margin-top: 3px;
+    }
+
+    /* ──────────────────────────────────────────────
+       PRINT — scale the screen layout into A4
+    ────────────────────────────────────────────── */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    @media print {
+      html, body {
+        background: white;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        /* 1123 / 1123 = 1.0 — content now fits exactly */
+        transform-origin: top left;
+        transform: scale(1);
+        overflow: hidden;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+    }
+
+    /* ──────────────────────────────────────────────
+       PRINT BUTTON (hidden on print)
+    ────────────────────────────────────────────── */
+    .print-btn {
+      display: block;
+      width: 160px;
+      margin: 0 auto 18px;
+      padding: 9px 0;
+      background: #1e2a3a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 9pt;
+      font-weight: 600;
+      letter-spacing: .8px;
+      cursor: pointer;
+      text-align: center;
+      text-transform: uppercase;
+      transition: background .2s;
+    }
+    .print-btn:hover { background: #2c3e55; }
+    @media print { .print-btn { display: none; } }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir / PDF</button>
+
+  <div class="page">
+
+    <!-- ══════════════════ SIDEBAR ══════════════════ -->
+    <aside class="sidebar">
+
+      <!-- Photo -->
+      <div class="profile-photo-wrap">
+        <img class="profile-photo" src="assets/hugo-profile.jpg" alt="Foto de perfil de Hugo Daira Sousa" />
+      </div>
+
+      <!-- Name -->
+      <div class="sidebar-name">
+        <h1>Hugo Daira<br>Sousa</h1>
+        <div class="role">Full-Stack Developer</div>
+      </div>
+
+      <!-- Contactos -->
+      <div class="sb-section">
+        <div class="sb-heading">Contactos</div>
+        <ul class="contact-list">
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:hugomigueldaira.sousa@gmail.com">hugomigueldaira.sousa<br>@gmail.com</a>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            +351 935 593 673
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Canidelo, Vila Nova de Gaia, Portugal
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58 0-.28-.01-1.02-.01-2-3.34.72-4.04-1.61-4.04-1.61-.54-1.37-1.33-1.73-1.33-1.73-1.09-.74.08-.73.08-.73 1.2.08 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.69.82.57C20.56 21.79 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <a href="https://github.com/hmsousa10" target="_blank">github.com/hmsousa10</a>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a href="https://linkedin.com/in/hugo-miguel-daira-sousa-99815a266/" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <a href="https://hugo-daira-sousa-portefolio.netlify.app/" target="_blank">Portfólio Online</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Habilitações -->
+      <div class="sb-section">
+        <div class="sb-heading">Habilitações</div>
+        <div class="edu-item">
+          <div class="edu-degree">Lic. Engenharia Informática</div>
+          <div class="edu-school">Univ. Lusófona do Porto</div>
+          <div class="edu-year">2024 — Presente</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Ensino Secundário — ITM</div>
+          <div class="edu-school">Colégio de Gaia</div>
+          <div class="edu-year">2021 — 2024</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Ensino Articulado — Música</div>
+          <div class="edu-school">Esc. de Música de Perosinho</div>
+          <div class="edu-year">2016 — 2021</div>
+        </div>
+      </div>
+
+      <!-- Competências -->
+      <div class="sb-section">
+        <div class="sb-heading">Competências</div>
+        <div class="skill-item">
+          <div class="skill-label"><span>HTML5 &amp; CSS3</span><span>95%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>JavaScript</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>PHP</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>SQL / MySQL</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Java</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Python</span><span>65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Git &amp; GitHub</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <!-- Línguas -->
+      <div class="sb-section">
+        <div class="sb-heading">Línguas</div>
+        <div class="lang-item">
+          <div>
+            <div class="lang-name">Português</div>
+            <div class="lang-level">Nativo</div>
+          </div>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-item">
+          <div>
+            <div class="lang-name">Inglês</div>
+            <div class="lang-level">Intermédio (B1/B2)</div>
+          </div>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interesses -->
+      <div class="sb-section">
+        <div class="sb-heading">Interesses</div>
+        <div class="tags">
+          <span class="tag">Violino</span>
+          <span class="tag">Guitarra</span>
+          <span class="tag">Futebol</span>
+          <span class="tag">Animais</span>
+          <span class="tag">Web Dev</span>
+          <span class="tag">Open Source</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ══════════════════ MAIN ══════════════════ -->
+    <main class="main">
+
+      <!-- Sobre Mim -->
+      <section class="section">
+        <div class="section-heading">Sobre Mim</div>
+        <p class="summary-text">
+          Estudante de Engenharia Informática na Universidade Lusófona do Porto, com base em Informática, Tecnologia e Multimédia pelo Colégio de Gaia. Apaixonado pelo desenvolvimento web, pela atenção ao detalhe e pelo trabalho em equipa. Busco aplicar e expandir os meus conhecimentos em ambientes profissionais desafiantes, combinando criatividade técnica com rigor no desenvolvimento de soluções Full-Stack.
+        </p>
+      </section>
+
+      <!-- Experiência -->
+      <section class="section">
+        <div class="section-heading">Experiência Profissional</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Analista de Dados</div>
+            <div class="entry-period">Fev 2026 — Mar 2026</div>
+          </div>
+          <div class="entry-company">TEALT</div>
+          <div class="entry-desc">
+            Análise de dados, integração de relatórios e elaboração de documentação técnica. Contribuição para a melhoria de processos internos através de insights baseados em dados.
+          </div>
+          <div class="entry-tags">
+            <span class="entry-tag">Análise de Dados</span>
+            <span class="entry-tag">Relatórios</span>
+            <span class="entry-tag">Documentação Técnica</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Desenvolvedor Web</div>
+            <div class="entry-period">Jul 2023 — Jun 2024 · Part-time</div>
+          </div>
+          <div class="entry-company">ARMIS Group</div>
+          <div class="entry-desc">
+            Desenvolvimento de aplicação de leitura cognitiva de documentos com recurso a IA. Trabalho em ambiente profissional real, colaboração em equipa e implementação de funcionalidades de front-end e integração de API.
+          </div>
+          <div class="entry-tags">
+            <span class="entry-tag">JavaScript</span>
+            <span class="entry-tag">HTML &amp; CSS</span>
+            <span class="entry-tag">IA Cognitiva</span>
+            <span class="entry-tag">REST API</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projetos -->
+      <section class="section" style="flex:1;display:flex;flex-direction:column;">
+        <div class="section-heading">Projetos Académicos</div>
+
+        <div class="project-entry">
+          <div class="project-name">SGO — Sistema de Gestão de Oficina</div>
+          <div class="project-tech">Java · JavaScript · REST API</div>
+          <div class="project-desc">Sistema Full-Stack de gestão de oficina desenvolvido em contexto académico, com módulos de clientes, veículos e ordens de serviço.</div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-name">Gostos d'Arrábida — Restaurante/Pastelaria</div>
+          <div class="project-tech">JavaScript · PHP · MySQL</div>
+          <div class="project-desc">Sistema de gestão de restaurante com reservas online e ementa digital via QR code, com painel de administração completo.</div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-name">ASYDIM — Consultoria Sustentável</div>
+          <div class="project-tech">PHP · MySQL · Tailwind CSS</div>
+          <div class="project-desc">Plataforma educativa sobre sustentabilidade com dashboard administrativo para gestão de conteúdos.</div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-name">Univermotion — Energias Renováveis</div>
+          <div class="project-tech">PHP · JavaScript · PHPMailer</div>
+          <div class="project-desc">Website institucional com simulador de painéis solares e sistema de contacto por e-mail integrado.</div>
+          <a class="project-link" href="https://univermotion.pt/" target="_blank">🔗 univermotion.pt</a>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-name">Oficina Carlos Alberto</div>
+          <div class="project-tech">HTML5 · CSS3 · JavaScript</div>
+          <div class="project-desc">Website para oficina automóvel com apresentação de serviços, galeria e formulário de contacto.</div>
+          <a class="project-link" href="https://oficina-carlos-alberto.netlify.app/" target="_blank">🔗 oficina-carlos-alberto.netlify.app</a>
+          <div class="project-note">⚠ Desenvolvido porém não utilizado pelo cliente</div>
+        </div>
+      </section>
+
+      <!-- Ferramentas & Tecnologias -->
+      <section class="section" style="margin-bottom:0;">
+        <div class="section-heading">Ferramentas &amp; Tecnologias</div>
+        <div class="tools-grid">
+          <span class="tool-badge"><span class="dot-c" style="background:#e34c26"></span>HTML5</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#264de4"></span>CSS3</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#f7df1e"></span>JavaScript</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#8993be"></span>PHP</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#336791"></span>MySQL</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#b07219"></span>Java</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#3776ab"></span>Python</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#f05032"></span>Git</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#181717"></span>GitHub</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#38bdf8"></span>Tailwind CSS</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#61dafb"></span>REST API</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#4a90d9"></span>VS Code</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#ff6c37"></span>Postman</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#00b4d8"></span>PHPMailer</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#4caf50"></span>Node.js</span>
+          <span class="tool-badge"><span class="dot-c" style="background:#f4845f"></span>Netlify</span>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
